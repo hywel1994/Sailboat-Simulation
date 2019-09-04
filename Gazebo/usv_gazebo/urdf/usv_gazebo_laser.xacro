@@ -19,7 +19,6 @@
   <!-- Defines the macro for simulated IMU -->
   <xacro:include filename="$(find usv_gazebo)/urdf/imu_gazebo.xacro" />
 
-
   <!-- Macro for P3D ground truth -->
   <!-- <xacro:include filename="$(find usv_gazebo)/urdf/p3d_gazebo.xacro" /> -->
 
@@ -38,15 +37,14 @@
   </xacro:if>
   <!-- <xacro:if value="$(arg p3d)">
     <xacro:usv_p3d_gazebo name="usv"/>
-  </xacro:if> -->
+  </xacro:if>  samples="1875"-->
 
   <xacro:usv_gazebo_camera name="usv"/>
 
-
-  <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
-  <HDL-32E parent="base_link" name="velodyne" topic="/velodyne_points2" hz="10" samples="220">
-        <origin xyz="0 0 0.6" rpy="0 0 0" />
-  </HDL-32E>
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points2" hz="1">
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
+  </VLP-16>
 
   
 </robot>

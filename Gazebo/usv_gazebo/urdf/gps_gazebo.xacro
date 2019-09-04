@@ -3,11 +3,11 @@
   <xacro:macro name="usv_gps_gazebo" params="name">
     <gazebo>
       <plugin name="gps_plugin_${name}" filename="libhector_gazebo_ros_gps.so">
-          <updateRate>1.0</updateRate>
+          <updateRate>20.0</updateRate>
 		      <alwaysOn>true</alwaysOn>
           <bodyName>base_link</bodyName>
           <frameId>base_link</frameId>
-          <topicName>/gps/fix</topicName>
+          <topicName>/gps</topicName>
           <velocityTopicName>/gps/fix_velocity</velocityTopicName>
 
           <referenceLatitude>-30.06022459407145675</referenceLatitude>

@@ -5,17 +5,23 @@ project(usv_gazebo)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 set(catkin_package_DEPENDENCIES
-	gazebo_ros
-	roscpp
-	sensor_msgs
+  	gazebo_ros
+  	roscpp
+  	sensor_msgs
     tf
-	usv_gazebo_plugins
+	  usv_gazebo_plugins
     sailboat_message
+    dynamic_reconfigure
     )
 
 find_package(catkin REQUIRED  COMPONENTS
   ${catkin_package_DEPENDENCIES}
 )
+
+generate_dynamic_reconfigure_options(
+        cfg/usv_gazebo.cfg
+)
+
 
 catkin_package(
 #  INCLUDE_DIRS include

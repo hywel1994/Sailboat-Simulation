@@ -22,6 +22,7 @@
   <depend>tf</depend>
   <depend>sailboat_message</depend>
   <depend>usv_gazebo_plugins</depend>
+  <depend>dynamic_reconfigure</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

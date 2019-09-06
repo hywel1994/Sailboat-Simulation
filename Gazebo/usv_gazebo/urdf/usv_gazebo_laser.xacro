@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro"
        name="usv">
-
+  <xacro:property name="namespace" value="$(arg name)"/>
   <!-- Defines the "usv_base" macro -->
   <xacro:include filename="$(find usv_gazebo)/urdf/usv_urdf.xacro" />
   <!--<xacro:include filename="$(find usv_gazebo)/urdf/usv_urdf_camera.xacro" />-->
@@ -20,31 +20,30 @@
   <xacro:include filename="$(find usv_gazebo)/urdf/imu_gazebo.xacro" />
 
   <!-- Macro for P3D ground truth -->
-  <!-- <xacro:include filename="$(find usv_gazebo)/urdf/p3d_gazebo.xacro" /> -->
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
 
   <!-- Call the macros defined above -->
   <!-- includes basic description witout plugins -->
-  <xacro:usv_base />
+  <xacro:usv_base  name="${namespace}"/>
   <!-- USV dynamic model -->
-  <xacro:usv_gazebo name="usv"/>
+  <xacro:usv_gazebo  name="${namespace}"/>
 
   <!-- Optional sensor plugins - called by macros defined above -->
   <xacro:if value="$(arg gps)">
-    <xacro:usv_gps_gazebo name="usv"/>
+    <xacro:usv_gps_gazebo  name="${namespace}"/>
   </xacro:if>
   <xacro:if value="$(arg imu)">
-    <xacro:usv_imu_gazebo name="usv"/>
+    <xacro:usv_imu_gazebo  name="${namespace}"/>
   </xacro:if>
-  <!-- <xacro:if value="$(arg p3d)">
-    <xacro:usv_p3d_gazebo name="usv"/>
-  </xacro:if>  samples="1875"-->
 
-  <xacro:usv_gazebo_camera name="usv"/>
+  <xacro:if value="$(arg camera)">
+    <xacro:usv_gazebo_camera  name="${namespace}"/>
+  </xacro:if>
 
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points2" hz="1">
+  <xacro:if value="$(arg p3d)">
+  <VLP-16 parent="${namespace}/base_link" name="velodyne" topic="/velodyne_points2" hz="2">
         <origin xyz="0 0 0.5" rpy="0 0 0" />
   </VLP-16>
-
+  </xacro:if>
   
 </robot>

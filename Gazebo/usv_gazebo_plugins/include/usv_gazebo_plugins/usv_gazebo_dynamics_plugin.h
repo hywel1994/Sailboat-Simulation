@@ -86,6 +86,7 @@ namespace gazebo
     /// Parameters
     std::string node_namespace_;
     std::string link_name_;
+    std::string cmd_topic_name_;
     
     ros::NodeHandle *rosnode_;
     

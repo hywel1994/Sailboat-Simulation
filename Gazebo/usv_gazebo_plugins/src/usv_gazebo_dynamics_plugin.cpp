@@ -127,6 +127,17 @@ void UsvPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf )
 
     ROS_INFO_STREAM("Found SDF parameter bodyName as <"<<link_name_<<">");
   }
+
+  if (!_sdf->HasElement("cmdTopic") || !_sdf->GetElement("cmdTopic")->GetValue())
+  {
+    cmd_topic_name_ = "cmd_drive_raw";
+    ROS_INFO_STREAM("Did not find SDF parameter bodyName");
+  }
+  else {
+    cmd_topic_name_ = _sdf->GetElement("cmdTopic")->Get<std::string>();
+    ROS_INFO_STREAM("Found cmd topic name as <"<<cmd_topic_name_<<">");
+  }
+
   if (!link_)
   {
     ROS_FATAL("usv_gazebo_dynamics_plugin error: bodyName: %s does not exist\n", link_name_.c_str());
@@ -194,7 +205,7 @@ void UsvPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf )
             ros::init_options::NoSigintHandler|ros::init_options::AnonymousName);
   rosnode_ = new ros::NodeHandle( node_namespace_ );
 
-  cmd_drive_sub_ = rosnode_->subscribe("cmd_drive", 1, &UsvPlugin::OnCmdDrive, this );
+  cmd_drive_sub_ = rosnode_->subscribe(cmd_topic_name_, 1, &UsvPlugin::OnCmdDrive, this );
 
   // Listen to the update event. This event is broadcast every
   // simulation iteration.
@@ -245,7 +256,7 @@ void UsvPlugin::UpdateChild()
   double dcmd = cmd_time.Double();
   if ( dcmd > cmd_timeout_ )
   {
-    ROS_INFO_STREAM_THROTTLE(1.0,"Command timeout!");
+    // ROS_INFO_STREAM_THROTTLE(1.0,"Command timeout!");
     last_cmd_drive_left_ = 0.0;
     last_cmd_drive_right_ = 0.0;
   }

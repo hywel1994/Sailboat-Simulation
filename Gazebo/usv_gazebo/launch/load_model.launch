@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- Base -->
+<launch>
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="yaw" default="0.0" />
+    <arg name="name" default="default_usv" />
+    <arg name="imu" default="true" />
+    <arg name="gps" default="true" />
+    <arg name="camera" default="false" />
+    <arg name="p3d" default="false" />
+    <arg name="urdf" default="$(find usv_gazebo)/urdf/usv_gazebo_laser.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(arg urdf) name:=$(arg name) imu:=$(arg imu) gps:=$(arg gps) camera:=$(arg camera) p3d:=$(arg p3d)"/>
+   
+    <!-- Spawn robot in gazebo -->
+    <node name="spawn_usv_model_$(arg name)" pkg="gazebo_ros" type="spawn_model"
+    args="-x $(arg x) -y $(arg y) -z 5.0 -R 0.0 -P 0.0 -Y $(arg yaw) -unpause -urdf -param robot_description -model $(arg name)"/>
+
+</launch>

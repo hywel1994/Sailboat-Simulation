@@ -31,7 +31,7 @@
 		<thrustOffsetZ>-0.01</thrustOffsetZ>
 		<metacentricLength>0.4</metacentricLength>
 		<metacentricWidth>0.4</metacentricWidth>
-      </plugin>
+	  </plugin>
     </gazebo>
   </xacro:macro>
 </robot>

@@ -6,10 +6,10 @@
       <!--<plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">-->
     <plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">
       <alwaysOn>true</alwaysOn>
-      <bodyName>base_link</bodyName>
-      <frameName>base_link</frameName>
-      <topicName>imu</topicName>
-      <serviceName>imu_service</serviceName>
+      <bodyName>${name}/base_link</bodyName>
+      <frameName>${name}/base_link</frameName>
+      <topicName>${name}/imu</topicName>
+      <serviceName>${name}/imu_service</serviceName>
       <gaussianNoise>0.0</gaussianNoise>
       <updateRate>20.0</updateRate>
     </plugin>

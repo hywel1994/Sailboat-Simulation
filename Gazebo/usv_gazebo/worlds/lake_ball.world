@@ -15,12 +15,12 @@
       <uri>model://sun</uri>
     </include>
     
-    <gui fullscreen="0">
+    <!-- <gui fullscreen="0">
       <camera name="user_camera">
         <pose>30 -30 20 0 0.275643 2.35619</pose>
         <view_controller>orbit</view_controller>
       </camera>
-    </gui>
+    </gui> -->
     <model name="ground_plane">
       <static>1</static>
       <link name="link">
@@ -91,19 +91,15 @@
 
     <!-- Buoys -->
     <include>
-      <uri>model://models/buoy_black</uri>
-      <pose> 10 5 5 0 0 0</pose>
+      <uri>model://models/buoy_yellow</uri>
+      <pose> 15 5 5 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://models/ball_orange</uri>
-      <pose> 10 0 5 0 0 0</pose>
+      <pose> 15 -5 5 0 0 0</pose>
     </include>
 
-    <include>
-      <uri>model://models/buoy_yellow</uri>
-      <pose> 10 -5 5 0 0 0</pose>
-    </include>
 
 
 

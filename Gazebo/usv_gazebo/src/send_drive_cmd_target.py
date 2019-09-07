@@ -34,9 +34,9 @@ if __name__ == "__main__":
     config_srv = Server(usv_gazebo_Config, getConfigCallback)
 
     rate = rospy.Rate(10)
-    max_count = 500
-    current = 0
-    v = 0.1
+    max_count = 1000
+    current = 500
+    v = 0.2
     while not rospy.is_shutdown():
         if para_cfg[0] == 1:
             #print ('process')

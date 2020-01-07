@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="road">
+    <link name="roadl">
+      <pose>0 0 0 0 0 0</pose>
+      <velocity_decay>
+        <linear>0.001</linear>
+        <angular>0.001</angular>
+      </velocity_decay>
+      <collision name="roadc">
+        <geometry>
+          <box>
+            <size>20 100 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="roadv">
+        <geometry>
+          <box>
+            <size>20 100 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

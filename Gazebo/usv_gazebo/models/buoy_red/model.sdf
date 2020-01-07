@@ -22,16 +22,16 @@
       <collision name="buoyc">
         <geometry>
           <cylinder>
-            <radius>0.25</radius>
-            <length>1.0</length>
+            <radius>0.5</radius>
+            <length>2.0</length>
           </cylinder>
         </geometry>
       </collision>
       <visual name="buoyv">
         <geometry>
           <cylinder>
-            <radius>0.25</radius>
-            <length>1.0</length>
+            <radius>0.5</radius>
+            <length>2.0</length>
           </cylinder>
         </geometry>
         <material>

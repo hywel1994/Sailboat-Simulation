@@ -93,11 +93,11 @@
   </gazebo>
 
   <!-- Define a location for the camera to sit -->
-  <xacro:property name="camera_size_h" value="1" /> <!-- Size of square 'camera' box -->
-  <xacro:property name="camera_size_w" value="1" />
+  <xacro:property name="camera_size_h" value="0.5" /> <!-- Size of square 'camera' box -->
+  <xacro:property name="camera_size_w" value="0.7" />
   <joint name="${name}/camera_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz="0.0 0 0.5" rpy="0 0 0"/>
+    <origin xyz="0.0 0 0.3" rpy="0 0 0"/>
     <parent link="${name}/base_link"/>
     <child link="${name}/camera_link"/>
   </joint>
@@ -105,13 +105,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	      <box size="${camera_size_w} ${camera_size_w} ${camera_size_h}"/>
+	      <box size="1 ${camera_size_w} ${camera_size_h}"/>
       </geometry>
     </collision>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	      <box size="${camera_size_w} ${camera_size_w} ${camera_size_h}"/>
+	      <box size="1 ${camera_size_w} ${camera_size_h}"/>
       </geometry>
       <material name="black"/>
     </visual>  

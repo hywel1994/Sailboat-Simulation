@@ -14,13 +14,13 @@
     <arg name="verbose" value="true"/>
   </include>
 
-  <!-- <group ns='self'>
+  <group ns='self'>
     <include file="$(find usv_gazebo)/launch/load_model.launch">
       <arg name="name" value="usv" />
       <arg name="imu" value="true" />
       <arg name="gps" value="true" />
-      <arg name="camera" value="false" />
-      <arg name="p3d" value="false" />
+      <arg name="camera" value="true" />
+      <arg name="p3d" value="true" />
       <arg name="urdf" value="$(find usv_gazebo)/urdf/usv_gazebo_laser.xacro"/>
       <arg name="x" value="0.0" />
       <arg name="y" value="0.0" />
@@ -41,6 +41,6 @@
       <arg name="y" value="0.0" />
       <arg name="yaw" value="1.57" />
     </include>
-  </group> -->
+  </group>
 
 </launch>

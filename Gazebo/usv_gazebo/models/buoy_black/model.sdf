@@ -22,14 +22,14 @@
       <collision name="buoyc">
         <geometry>
           <sphere>
-            <radius>1.5</radius>
+            <radius>0.75</radius>
           </sphere>
         </geometry>
       </collision>
       <visual name="buoyv">
         <geometry>
           <sphere>
-            <radius>1.5</radius>
+            <radius>0.75</radius>
           </sphere>
         </geometry>
         <material>

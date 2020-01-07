@@ -28,7 +28,7 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10 10</size>
             </plane>
           </geometry>
           <surface>
@@ -51,7 +51,7 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10 10</size>
             </plane>
           </geometry>
           <material>
@@ -91,13 +91,86 @@
 
     <!-- Buoys -->
     <include>
+      <uri>model://models/buoy</uri>
+      <pose> 27 15 5 0 0 0</pose>
+    </include>
+
+    <include>
       <uri>model://models/buoy_yellow</uri>
-      <pose> 15 5 5 0 0 0</pose>
+      <pose> 27 10 5 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://models/buoy_black</uri>
+      <pose> 27 5 5 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://models/ball_orange</uri>
-      <pose> 15 -5 5 0 0 0</pose>
+      <pose> 27 -5 5 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://models/buoy_red</uri>
+      <pose> 27 -10 5 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://models/buoy_blue</uri>
+      <pose> 27 -15 5 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://apartment</uri>
+      <pose> 40 -38 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+    
+    <include>
+      <uri>model://water_tower</uri>
+      <pose> 40 40 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+
+
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 -20 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+    
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 -10 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 0 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 10 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 20 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+  <include>
+      <uri>model://oak_tree</uri>
+      <pose> 40 30 5.5 0 0 0</pose>
+      <static>1</static>
+    </include>
+  
+
+    <include>
+      <uri>model://models/road</uri>
+      <pose> 40 0 5 0 0 0</pose>
+      <static>1</static>
     </include>
 
 
